@@ -7,16 +7,19 @@ public class Livro {
     private String categoria;
     private Boolean status;
 
-    public Livro(Integer codigo, String titulo, String autor, String categoria, Boolean status) {
+    public Livro(Integer codigo, String titulo, String autor, String categoria) {
         this.codigo = codigo;
         this.titulo = titulo;
         this.autor = autor;
         this.categoria = categoria;
-        this.status = status;
+        this.status = true;
+    }
+
+    public Livro() {
     }
 
     public Integer getCodigo() {
-        return codigo;
+        return this.codigo;
     }
 
     public void setCodigo(Integer codigo) {
@@ -57,6 +60,7 @@ public class Livro {
 
     @Override
     public String toString(){
-        return  String.format("Livro titulo %s, autor %s, categoria %s e codigo %d", titulo, autor, categoria, codigo);
+        return  String.format("Livro titulo %s, autor %s, categoria %s, codigo %d, status %b",
+                this.titulo, this.autor, this.categoria, this.codigo, this.status);
     }
 }
